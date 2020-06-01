@@ -58,7 +58,7 @@ export default new Vuex.Store({
         state.isBreak = !state.isBreak
       }
       state.current = ''
-      state.timeleft = state.isbreak ? timeleftBreak : timeleft
+      state.timeleft = state.isBreak ? timeleftBreak : timeleft
     }
   },
   actions: {

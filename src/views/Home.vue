@@ -2,14 +2,14 @@
   <div id="home">
     <h1>{{currentText}}</h1>
     <h2>{{timetext}}</h2>
-    <b-btn variant="primary" v-if="status == 0" @click="start">
+    <b-btn variant="primary" v-if="status != 1" @click="start">
       <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
     </b-btn>
     <b-btn variant="primary" v-if="status == 1" @click="pause">
       <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
     </b-btn>
       <!-- 如果目前有東西或是todos裡面有東西 -->
-    <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0">
+    <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0"  @click="finish(true)">
       <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
     </b-btn>
   </div>

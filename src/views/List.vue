@@ -1,6 +1,6 @@
 <template>
   <div id="list">
-    <b-form-input v-model="newtodo"></b-form-input>
+    <b-form-input v-model="newtodo" @keydown.enter="addTodo"></b-form-input>
     <b-btn variant="success" @click="addTodo"> 新增</b-btn>
     <b-table-simple>
       <b-thead>
@@ -28,7 +28,7 @@
             <b-btn variant="link" class="text-primary" @click="editTodo(index)">
               <font-awesome-icon :icon="['fas','pen']"></font-awesome-icon>
             </b-btn>
-            <b-btn variant="link" class="text-primary" @click="delTodo">
+            <b-btn variant="link" class="text-primary" @click="delTodo(index)">
               <font-awesome-icon :icon="['fas','times']"></font-awesome-icon>
             </b-btn>
           </b-td>
@@ -51,6 +51,7 @@ export default {
   methods: {
     addTodo () {
       this.$store.commit('addTodo', this.newtodo)
+      this.newtodo = ''
     },
     delTodo (index) {
       this.$store.commit('delTodo', index)
