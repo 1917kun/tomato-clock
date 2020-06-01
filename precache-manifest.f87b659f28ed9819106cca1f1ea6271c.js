@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "alarms/ya.mp3"
   },
   {
-    "revision": "57af6b9572cb45a5d205",
-    "url": "css/app.4e477a09.css"
+    "revision": "17d4ab919fee06dff9bc",
+    "url": "css/app.e0beee3f.css"
   },
   {
     "revision": "f5cbd49d5a8da8a9a117",
@@ -412,28 +412,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "fonts/-nF7OG829Oofr2wohFbTp9iFOkMQAewlpbGXhhyYs0QF3kPVyLylzU95vTq1Ltj5xQez1g.99.06608a54.woff2"
   },
   {
-    "revision": "a172821513092334b673bb742c91fce6",
+    "revision": "803d7015397d3bc34e1d8ff72ba78697",
     "url": "index.html"
   },
   {
-    "revision": "b70b8780cb417a40a8d0",
-    "url": "js/NotFound.0eab0f08.js"
+    "revision": "e22d73aa62440c634a17",
+    "url": "js/NotFound.291e8708.js"
   },
   {
-    "revision": "57af6b9572cb45a5d205",
-    "url": "js/app.1f12fd25.js"
+    "revision": "17d4ab919fee06dff9bc",
+    "url": "js/app.9131f86b.js"
   },
   {
     "revision": "f5cbd49d5a8da8a9a117",
     "url": "js/chunk-vendors.a349a339.js"
   },
   {
-    "revision": "ef2aa53a4d61eebf21a0",
-    "url": "js/list.fe2e865f.js"
+    "revision": "ca73a08d4b16a0dc0ff0",
+    "url": "js/list.f3333179.js"
   },
   {
-    "revision": "75601613a378b8c46421",
-    "url": "js/settings.143f7beb.js"
+    "revision": "5bfbe37bd6a3e2c5a27f",
+    "url": "js/settings.105ca786.js"
   },
   {
     "revision": "3dc210960fe7e4127773465ac5d8a550",
