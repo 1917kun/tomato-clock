@@ -15,13 +15,19 @@ import draggable from 'vuedraggable'
 import 'noto-sans-tc/noto_sans_tc_regular/css.css'
 import './style/style.styl'
 
+import VueGtag from 'vue-gtag'
+import RadialProgressBar from 'vue-radial-progress'
+Vue.use(VueGtag, {
+  config: { id: 'UA-168209659-1' }
+})
+Vue.component('radial-progress-bar', RadialProgressBar)
+
 Vue.config.productionTip = false
 
 library.add(faCheck, faPen, faTimes, faUndo, faSave, faPlay, faPause, faStepForward)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('draggable', draggable)
-
 new Vue({
   router,
   store,

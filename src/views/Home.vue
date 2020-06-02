@@ -1,17 +1,22 @@
 <template>
   <div id="home">
-    <h1>{{currentText}}</h1>
-    <h2>{{timetext}}</h2>
-    <b-btn variant="primary" v-if="status != 1" @click="start">
+    <radial-progress-bar :diameter="500" :completed-steps="completedSteps" :total-steps="totalSteps" :inner-stroke-color="#323232">
+   <p>Total : {{ timeleft }}</p>
+   <p>Completed : {{}}</p>
+   <b-btn variant="primary" v-if="status != 1" @click="start">
       <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
     </b-btn>
     <b-btn variant="primary" v-if="status == 1" @click="pause">
       <font-awesome-icon :icon="['fas','pause']"></font-awesome-icon>
     </b-btn>
+    <h2>{{timetext}}</h2>
+    <h1>{{currentText}}</h1>
       <!-- 如果目前有東西或是todos裡面有東西 -->
     <b-btn variant="primary" v-if="current.length > 0 || todos.length > 0"  @click="finish(true)">
       <font-awesome-icon :icon="['fas','step-forward']"></font-awesome-icon>
     </b-btn>
+  </radial-progress-bar>
+
   </div>
 </template>
 
@@ -23,7 +28,8 @@ export default {
       // 1 = 播放
       // 2 = 暫停
       status: 0,
-      timer: 0
+      timer: 0,
+      innerStrokeColor: '#323232'
     }
   },
   computed: {
@@ -93,7 +99,6 @@ export default {
       clearInterval(this.timer)
       this.status = 2
     }
-
   }
 
 }

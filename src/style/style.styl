@@ -1,28 +1,46 @@
 body
   font-family var(--font-family-sans-serif),"Noto Sans TC"
-  height: 100%
-  display flex
-  justify-content center
+  height 100%
+  width 100%
 #app
-  width: 100%
   height 100vh
-  background black
-  color  white
   display flex
-  flex-direction column-reverse 
-  justify-content space-between 
-  align-items: center
+  flex-direction column-reverse
+  padding 0
 
 #nav
-  width: 100%
+  height 20%
   display flex
-  justify-content space-around
-  fixed bottom
+  justify-content space-evenly
+  align-items center
+  background transparent linear-gradient(180deg, #FF6F61 0%, #FF4040 100%) 0% 0% no-repeat
+  box-shadow 0px 0px 20px #44444480
+  opacity: 1
 
+#home
+  height 100%
+  background transparent linear-gradient(180deg, #FF6F61 0%, #FF4040 100%) 0% 0% no-repeat
+  opacity 0.8
+  display flex
+  justify-content center
+  align-items center
+  font-family 'Roboto', sans-serif
+  .progressbar__label
+    margin-top 2rem
 #list
-  width 95%
-  height 100vh
-  background #333
-  .table
-    color white 
-
+  height 100%
+  background transparent linear-gradient(180deg, #FF6F61 0%, #FF4040 100%) 0% 0% no-repeat
+  opacity 0.8
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  font-family 'Roboto', sans-serif
+#settings
+  height 100%
+  background transparent linear-gradient(180deg, #FF6F61 0%, #FF4040 100%) 0% 0% no-repeat
+  opacity 0.8
+  display flex
+  justify-content center
+  align-items center
+  font-family 'Roboto', sans-serif
