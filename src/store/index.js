@@ -14,6 +14,23 @@ export default new Vuex.Store({
     current: '',
     isBreak: false
   },
+  getters: {
+    alarm (state) {
+      return state.alarm
+    },
+    todos (state) {
+      return state.todos
+    },
+    timeleft (state) {
+      return state.timeleft
+    },
+    current (state) {
+      return state.current
+    },
+    isBreak (state) {
+      return state.isBreak
+    }
+  },
   mutations: {
     selectAlarm (state, data) {
       state.alarm = data
@@ -62,23 +79,6 @@ export default new Vuex.Store({
     }
   },
   actions: {
-  },
-  getters: {
-    alarm (state) {
-      return state.alarm
-    },
-    todos (state) {
-      return state.todos
-    },
-    timeleft (state) {
-      return state.timeleft
-    },
-    current (state) {
-      return state.current
-    },
-    isBreak (state) {
-      return state.isBreak
-    }
   },
   modules: {
   },

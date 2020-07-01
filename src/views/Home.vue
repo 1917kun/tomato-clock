@@ -1,8 +1,8 @@
 <template>
   <div id="home">
-    <radial-progress-bar :diameter="500" :completed-steps="completedSteps" :total-steps="totalSteps" :inner-stroke-color="#323232">
+    <radial-progress-bar :diameter="500" :completed-steps="completedSteps" :total-steps="totalSteps" :inner-stroke-color="323232">
    <p>Total : {{ timeleft }}</p>
-   <p>Completed : {{}}</p>
+   <!-- <p>Completed : {{}}</p> -->
    <b-btn variant="primary" v-if="status != 1" @click="start">
       <font-awesome-icon :icon="['fas','play']"></font-awesome-icon>
     </b-btn>
