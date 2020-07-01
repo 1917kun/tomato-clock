@@ -12,7 +12,8 @@ export default new Vuex.Store({
     timeleft,
     alarm: 'alarm1.mp3',
     current: '',
-    isBreak: false
+    isBreak: false,
+    totaltime: timeleft
   },
   getters: {
     alarm (state) {
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     },
     isBreak (state) {
       return state.isBreak
+    },
+    totaltime (state) {
+      return state.totaltime
     }
   },
   mutations: {

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <radial-progress-bar :diameter="500" :completed-steps="completedSteps" :total-steps="totalSteps" :inner-stroke-color="323232">
+    <radial-progress-bar :diameter="500" :completed-steps="timeleft" :total-steps="totaltime" >
    <p>Total : {{ timeleft }}</p>
    <!-- <p>Completed : {{}}</p> -->
    <b-btn variant="primary" v-if="status != 1" @click="start">
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import RadialProgressBar from 'vue-radial-progress'
 export default {
   data () {
     return {
@@ -28,8 +29,7 @@ export default {
       // 1 = 播放
       // 2 = 暫停
       status: 0,
-      timer: 0,
-      innerStrokeColor: '#323232'
+      timer: 0
     }
   },
   computed: {
@@ -52,6 +52,9 @@ export default {
     },
     todos () {
       return this.$store.getters.todos
+    },
+    totaltime () {
+      return this.$store.getters.totaltime
     }
   },
   methods: {
@@ -99,6 +102,9 @@ export default {
       clearInterval(this.timer)
       this.status = 2
     }
+  },
+  components: {
+    RadialProgressBar
   }
 
 }
