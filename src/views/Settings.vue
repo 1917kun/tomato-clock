@@ -1,14 +1,18 @@
 <template>
   <div id="settings">
-    <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
-      <template v-slot:cell(preview)="data">
-        <!-- {{data}} 用來檢查 -->
-        <audio controls :src="'./alarms/'+data.item.file"></audio>
-      </template>
-      <template v-slot:cell(select)="data">
-        <font-awesome-icon v-if="data.item.file == alarm" :icon="['fas','check']"></font-awesome-icon>
-      </template>
-    </b-table>
+    <b-container>
+      <b-row class="justify-content-center align-items-center">
+        <b-table :items="items" :fields="fields" @row-clicked="selectAlarm">
+          <template v-slot:cell(preview)="data">
+            <!-- {{data}} 用來檢查 -->
+            <audio controls :src="'./alarms/'+data.item.file"></audio>
+          </template>
+          <template v-slot:cell(select)="data">
+            <font-awesome-icon v-if="data.item.file == alarm" :icon="['fas','check']"></font-awesome-icon>
+          </template>
+        </b-table>
+      </b-row>
+    </b-container>
   </div>
 </template>
 

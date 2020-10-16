@@ -1,40 +1,46 @@
 <template>
   <div id="list">
-    <b-form-input v-model="newtodo" @keydown.enter="addTodo"></b-form-input>
-    <b-btn variant="primary" @click="addTodo"> 新增</b-btn>
-    <b-table-simple>
-      <b-thead>
-        <b-tr>
-          <b-th>事項</b-th>
-          <b-th>動作</b-th>
-        </b-tr>
-      </b-thead>
-      <draggable v-model="todos" tag="tbody" v-bind="dragOption">
-        <b-tr v-if="todos.length == 0">
-          <b-td colspan="2">沒有資料</b-td>
-        </b-tr>
-        <b-tr v-else v-for="(todo,index) in todos" :key="index">
-          <b-td>
-            <b-form-input v-model="todo.model" v-if="todo.edit"></b-form-input>
-            <b-btn variant="link" class="text-warning" v-if="todo.edit" @click="cancelTodo(index)">
-              <font-awesome-icon :icon="['fas','undo']"></font-awesome-icon>
-            </b-btn>
-            <b-btn variant="link" class="text-warning" v-if="todo.edit" @click="saveTodo(index)">
-              <font-awesome-icon :icon="['fas','save']"></font-awesome-icon>
-            </b-btn>
-          </b-td>
-          <span>{{todo.name}}</span>
-          <b-td>
-            <b-btn variant="link" class="text-primary" @click="editTodo(index)">
-              <font-awesome-icon :icon="['fas','pen']"></font-awesome-icon>
-            </b-btn>
-            <b-btn variant="link" class="text-primary" @click="delTodo(index)">
-              <font-awesome-icon :icon="['fas','times']"></font-awesome-icon>
-            </b-btn>
-          </b-td>
-        </b-tr>
-      </draggable>
-    </b-table-simple>
+    <b-container>
+      <b-row class="justify-content-center align-items-center">
+      <b-form-input v-model="newtodo" @keydown.enter="addTodo" class="w-75 mr-3 mb-3"></b-form-input>
+      <b-btn variant="primary" @click="addTodo" class="mb-3"> 新增</b-btn>
+      </b-row>
+      <b-row class="justify-content-center align-items-center">
+        <b-table-simple>
+          <b-thead class="">
+            <b-tr>
+              <b-th>事項</b-th>
+              <b-th>動作</b-th>
+            </b-tr>
+          </b-thead>
+          <draggable v-model="todos" tag="tbody" v-bind="dragOption">
+            <b-tr v-if="todos.length == 0">
+              <b-td colspan="2">沒有資料</b-td>
+            </b-tr>
+            <b-tr v-else v-for="(todo,index) in todos" :key="index">
+              <b-td>
+                <b-form-input v-model="todo.model" v-if="todo.edit"></b-form-input>
+                <b-btn variant="link" class="text-warning" v-if="todo.edit" @click="cancelTodo(index)">
+                  <font-awesome-icon :icon="['fas','undo']"></font-awesome-icon>
+                </b-btn>
+                <b-btn variant="link" class="text-warning" v-if="todo.edit" @click="saveTodo(index)">
+                  <font-awesome-icon :icon="['fas','save']"></font-awesome-icon>
+                </b-btn>
+                <span v-else>{{todo.name}}</span>
+              </b-td>
+              <b-td>
+                <b-btn variant="link" class="text-primary" @click="editTodo(index)">
+                  <font-awesome-icon :icon="['fas','pen']"></font-awesome-icon>
+                </b-btn>
+                <b-btn variant="link" class="text-primary" @click="delTodo(index)">
+                  <font-awesome-icon :icon="['fas','times']"></font-awesome-icon>
+                </b-btn>
+              </b-td>
+            </b-tr>
+          </draggable>
+        </b-table-simple>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
